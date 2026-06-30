@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+  <title>алина 14 💀 рофл</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #0a0a0f;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      background: 
+        radial-gradient(circle at 30% 40%, rgba(255, 0, 150, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 50% 80%, rgba(153, 0, 255, 0.2) 0%, transparent 50%);
+      animation: bgShift 8s infinite alternate ease-in-out;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes bgShift {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(10px, -15px) rotate(1deg); }
+    }
+
+    .grid-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 480px;
+      background: rgba(10, 10, 20, 0.75);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border-radius: 42px;
+      padding: 28px 20px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 0 80px rgba(255, 0, 200, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .aesthetic-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 2rem;
+      letter-spacing: 4px;
+      margin-bottom: 6px;
+      filter: drop-shadow(0 0 15px #ff44b0);
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #ff6b9d, #c44dff, #6b9dff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 30px #ff44b0);
+      letter-spacing: 3px;
+      line-height: 1;
+      margin: 6px 0;
+      text-transform: lowercase;
+    }
+
+    .age-flair {
+      background: linear-gradient(135deg, #ff2a6d, #c44dff);
+      padding: 8px 26px;
+      border-radius: 80px;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 6px 0 12px;
+      box-shadow: 0 0 40px #ff2a6d;
+      letter-spacing: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(10px);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 36px;
+      padding: 26px 16px;
+      margin: 12px 0 18px;
+      width: 100%;
+      min-height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 180, 220, 0.4);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.5), 0 0 30px rgba(255,0,200,0.2);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card:active {
+      transform: scale(0.97);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    #birthdayMessage {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #e8d5f5;
+      text-shadow: 0 2px 15px rgba(0,0,0,0.7);
+      line-height: 1.5;
+      transition: opacity 0.15s ease;
+      word-break: break-word;
+      letter-spacing: 0.2px;
+    }
+
+    /* секретка */
+    .secret-section {
+      margin: 8px 0 14px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .secret-btn {
+      background: linear-gradient(135deg, #5865f2, #404eed);
+      border: none;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: white;
+      cursor: pointer;
+      letter-spacing: 1.5px;
+      box-shadow: 0 0 40px rgba(88, 101, 242, 0.5);
+      transition: all 0.2s;
+      text-transform: uppercase;
+      animation: pulse 2s infinite;
+      display: none;
+    }
+
+    .secret-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 60px rgba(88, 101, 242, 0.8);
+    }
+
+    .secret-btn:active {
+      transform: scale(0.95);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px rgba(88, 101, 242, 0.3); }
+      50% { box-shadow: 0 0 50px rgba(88, 101, 242, 0.7); }
+      100% { box-shadow: 0 0 20px rgba(88, 101, 242, 0.3); }
+    }
+
+    .secret-reveal {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #5865f2;
+      text-shadow: 0 0 30px #5865f2, 0 0 60px #404eed;
+      letter-spacing: 3px;
+      display: none;
+      animation: glitch 0.3s ease;
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(3px, -3px); }
+      25% { transform: translate(-3px, 3px); }
+      50% { transform: translate(3px, 3px); }
+      75% { transform: translate(-3px, -3px); }
+      100% { transform: translate(0, 0); }
+    }
+
+    .dot-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 4px 0 10px;
+    }
+
+    .dots {
+      display: flex;
+      gap: 9px;
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 50%;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background: #ff44b0;
+      box-shadow: 0 0 22px #ff44b0;
+      transform: scale(1.5);
+    }
+
+    .counter {
+      color: #ffb3ff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-left: 4px;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 6px;
+    }
+
+    .btn {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 12px 22px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #fff;
+      background: linear-gradient(135deg, rgba(255,0,150,0.2), rgba(100,0,255,0.2));
+      cursor: pointer;
+      transition: 0.2s;
+      letter-spacing: 0.6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.5);
+      text-transform: lowercase;
+    }
+
+    .btn:hover {
+      background: rgba(255,255,255,0.2);
+      border-color: #ff80bf;
+      box-shadow: 0 0 30px #ff2a6d;
+      transform: translateY(-3px);
+    }
+
+    .main-btn {
+      background: linear-gradient(135deg, #ff2a6d, #a445ff);
+      border: none;
+      font-weight: 800;
+      box-shadow: 0 0 35px #ff2a6d;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .footer-note {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.75rem;
+      margin-top: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 420px) {
+      h1 { font-size: 3rem; }
+      #birthdayMessage { font-size: 1.25rem; }
+      .secret-reveal { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-overlay"></div>
+
+  <div class="container">
+    <div class="aesthetic-top">
+      <span>💀</span><span>💿</span><span>🤙</span>
+    </div>
+    <h1>алина</h1>
+    <div class="age-flair">
+      <span>💀</span> 14 <span>💊</span>
+    </div>
+
+    <!-- карточка -->
+    <div class="glass-card" id="messageCard">
+      <p id="birthdayMessage">тапни, алина 💀</p>
+    </div>
+
+    <!-- секрет -->
+    <div class="secret-section">
+      <button class="secret-btn" id="secretBtn">🔮 открыть секрет</button>
+      <div class="secret-reveal" id="secretReveal">DC ХУЙНЯ</div>
+    </div>
+
+    <div class="dot-row">
+      <div class="dots" id="dotsContainer"></div>
+      <span class="counter" id="counterText">1/9</span>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn" id="prevBtn">◀ назад</button>
+      <button class="btn main-btn" id="surpriseBtn">🎲 рандом</button>
+      <button class="btn" id="nextBtn">дальше ▶</button>
+    </div>
+    <div class="footer-note">тапай карточку или листай ↓ rofl</div>
+  </div>
+
+  <script>
+    (() => {
+      const messages = [
+        "алина, 14 лет. серьёзно? ты теперь почти старше меня морально 💀",
+        "с др крч. желаю чтоб комп не лагал, а инет не вылетал посреди катки 🎮",
+        "пусть мамка не палит что ты в 3 ночи в дс сидишь. спишь днём — кайфуешь ночью 🌙",
+        "желаю норм тиммейтов в соло кю, а не этих... ну ты поняла 💀",
+        "чтоб дз само делалось, преподы не агрились, а столовая норм еду давала 🤡",
+        "ты конечно душнила местами, но своя. с днюхой, не бесись 🖤",
+        "пусть твой дискорд не крашится, а войс чат не фонит. это база 🙏",
+        "14 — это имба возраст. можно всё, а отвечать ещё не за что. пользуйся 😈",
+        "крч алина, живи в кайф, не парься о фигне и помни: ты топчик (иногда) 💊"
+      ];
+
+      const messageEl = document.getElementById('birthdayMessage');
+      const messageCard = document.getElementById('messageCard');
+      const secretBtn = document.getElementById('secretBtn');
+      const secretReveal = document.getElementById('secretReveal');
+      const dotsContainer = document.getElementById('dotsContainer');
+      const counterText = document.getElementById('counterText');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const surpriseBtn = document.getElementById('surpriseBtn');
+
+      let currentIndex = 0;
+      const lastMessageIndex = messages.length - 1;
+
+      function renderDots() {
+        dotsContainer.innerHTML = '';
+        messages.forEach((_, idx) => {
+          const dot = document.createElement('span');
+          dot.className = 'dot' + (idx === currentIndex ? ' active' : '');
+          dot.dataset.index = idx;
+          dot.addEventListener('click', (e) => {
+            const i = parseInt(e.target.dataset.index, 10);
+            if (!isNaN(i)) setIndex(i);
+          });
+          dotsContainer.appendChild(dot);
+        });
+      }
+
+      function updateDotsAndCounter() {
+        document.querySelectorAll('.dot').forEach((d, idx) => d.classList.toggle('active', idx === currentIndex));
+        counterText.textContent = `${currentIndex + 1}/${messages.length}`;
+      }
+
+      function setMessageText() {
+        messageEl.textContent = messages[currentIndex];
+      }
+
+      function toggleSecretButton() {
+        if (currentIndex === lastMessageIndex) {
+          secretBtn.style.display = 'inline-block';
+          secretReveal.style.display = 'none';
+        } else {
+          secretBtn.style.display = 'none';
+          secretReveal.style.display = 'none';
+        }
+      }
+
+      function revealSecret() {
+        secretBtn.style.display = 'none';
+        secretReveal.style.display = 'block';
+        secretReveal.style.animation = 'none';
+        secretReveal.offsetHeight;
+        secretReveal.style.animation = 'glitch 0.3s ease';
+        
+        for (let i = 0; i < 30; i++) {
+          setTimeout(spawnParticles, i * 20);
+        }
+      }
+
+      function setIndex(index) {
+        if (index < 0 || index >= messages.length) return;
+        currentIndex = index;
+        updateDotsAndCounter();
+        animateText();
+        toggleSecretButton();
+      }
+
+      function animateText() {
+        messageEl.style.opacity = '0';
+        messageEl.style.transform = 'scale(0.94)';
+        setTimeout(() => {
+          setMessageText();
+          messageEl.style.opacity = '1';
+          messageEl.style.transform = 'scale(1)';
+        }, 110);
+        spawnParticles();
+      }
+
+      function spawnParticles() {
+        const card = messageCard;
+        const rect = card.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        for (let i = 0; i < 14; i++) {
+          const p = document.createElement('div');
+          p.style.position = 'fixed';
+          p.style.left = cx + 'px';
+          p.style.top = cy + 'px';
+          p.style.width = '5px';
+          p.style.height = '5px';
+          p.style.background = `hsl(${Math.random()*60+280}, 80%, 65%)`;
+          p.style.borderRadius = '50%';
+          p.style.boxShadow = '0 0 18px #c44dff';
+          p.style.zIndex = '999';
+          p.style.pointerEvents = 'none';
+          document.body.appendChild(p);
+          const angle = Math.random() * 2 * Math.PI;
+          const dist = 35 + Math.random() * 50;
+          p.animate([
+            { transform: 'translate(0,0) scale(1)', opacity: 1 },
+            { transform: `translate(${Math.cos(angle)*dist}px, ${Math.sin(angle)*dist}px) scale(0)`, opacity: 0 }
+          ], { duration: 450, easing: 'ease-out' }).onfinish = () => p.remove();
+        }
+      }
+
+      function goNext() {
+        currentIndex = (currentIndex + 1) % messages.length;
+        updateDotsAndCounter();
+        animateText();
+        toggleSecretButton();
+      }
+
+      function goPrev() {
+        currentIndex = (currentIndex - 1 + messages.length) % messages.length;
+        updateDotsAndCounter();
+        animateText();
+        toggleSecretButton();
+      }
+
+      messageCard.addEventListener('click', goNext);
+      nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goNext(); });
+      prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goPrev(); });
+      secretBtn.addEventListener('click', (e) => { e.stopPropagation(); revealSecret(); });
+
+      surpriseBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        let rand = Math.floor(Math.random() * messages.length);
+        if (messages.length > 1 && rand === currentIndex) {
+          rand = (rand + 1) % messages.length;
+        }
+        setIndex(rand);
+        for (let i = 0; i < 20; i++) setTimeout(spawnParticles, i * 18);
+      });
+
+      renderDots();
+      updateDotsAndCounter();
+      setMessageText();
+      toggleSecretButton();
+    })();
+  </script>
+</body>
+</html>
